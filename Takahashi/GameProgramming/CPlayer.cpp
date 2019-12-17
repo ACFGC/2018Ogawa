@@ -154,8 +154,10 @@ y:相手のコライダ
 void CPlayer::OnCollision(C3DCollider *i, C3DCollider *y) {
 	int dx, dy,dz;
 	//衝突判定処理を呼ぶ
-	if (C3DCollider::Collision(i, y, &dx, &dy,&dz)) {
-		//衝突している時
+	//if (C3DCollider::Collision(i, y, &dx, &dy, &dz)) {
+	//if (i->Collision((CSphereCollider*)y, &dx, &dy, &dz)) {
+	if (i->Collision((CSphereCollider*)y)) {
+			//衝突している時
 		switch (i->mTag) {
 			//自分のコライダが球
 		case C3DCollider::ESPHERE:
