@@ -145,6 +145,13 @@ void CPlayer::Update() {
 
 	//XV
 	CCharacter::Update();
+	//?
+	//
+	mXCharacter.mPosition = mPosition;
+	mXCharacter.mRotation = mBox.mRotation;
+	mXCharacter.mRotation.y += 180;
+	mXCharacter.Update();
+
 }
 /*
 Õ“Ëˆ—
@@ -185,4 +192,9 @@ void CPlayer::OnCollision(C3DCollider *i, C3DCollider *y) {
 			;
 		}
 	}
+}
+
+void CPlayer::Render() {
+	CCharacter::Render();
+	mXCharacter.Render();
 }

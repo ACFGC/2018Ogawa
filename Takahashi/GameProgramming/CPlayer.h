@@ -2,11 +2,17 @@
 #define CPLAYER_H
 
 #include "CCharacter.h"
+//?
+#include "CXCharacter.h"
 /*
 プレイヤークラス
 */
 class CPlayer : public CCharacter {
 public:
+	//?
+	CXCharacter mXCharacter;
+	void Render();
+
 	//球コライダ追加
 	CSphereCollider mColSphere;
 	//移動速度

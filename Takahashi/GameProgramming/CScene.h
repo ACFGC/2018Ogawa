@@ -11,7 +11,7 @@
 class CScene {
 public:
 	//?
-	CXCharacter mXPlayer;
+//	CXCharacter mXPlayer;
 	CModelX mModelX;
 
 	static CScene *spInstance;

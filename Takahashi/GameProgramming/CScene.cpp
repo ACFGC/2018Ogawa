@@ -17,8 +17,8 @@
 void CScene::Init() {
 	//?
 	mModelX.Load("ラグナ.x");
-	mXPlayer.Init(&mModelX);
-	mXPlayer.mPosition = CVector3(00.0f, 20.0f, 40.0f);
+//	mXPlayer.Init(&mModelX);
+//	mXPlayer.mPosition = CVector3(00.0f, 20.0f, 40.0f);
 
 	//床生成
 	new CCharacter(0.0f, 0.0f, 50.0f, 20.0f, 1.0f, 20.0f, 0.0f, 0.0f, 0.0f);
@@ -34,7 +34,8 @@ void CScene::Init() {
 	new CCharacter(-10.0f, 0.0f, -320.0f, 5.0f, 1.0f, 20.0f, 0.0f, 0.0f, 0.0f);
 
 	//プレイヤー生成
-	new CPlayer(0.0f, 50.0f, 50.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f);
+	CPlayer *player = new CPlayer(0.0f, 50.0f, 50.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f);
+	player->mXCharacter.Init(&mModelX);
 
 	 //ゴール生成
 	//new CGoal(0.0f, 30.0f, -160.0f, 20.0f, 30.0f, 20.0f, 0.0f, 0.0f, 0.0f);
@@ -69,7 +70,7 @@ void CScene::Init() {
 //繰り返し実行する処理の定義
 void CScene::Update() {
 	//?
-	mXPlayer.Update();
+//	mXPlayer.Update();
 
 	//タスクを更新していく
 	CTaskManager::Get()->Update();
@@ -100,7 +101,7 @@ void CScene::Update() {
 	//タスクを描画していく
 	CTaskManager::Get()->Render();
 	//?
-	mXPlayer.Render();
+//	mXPlayer.Render();
 
 	//2D座標でUIを描画
 	//行列をプロジェクションモードへ変更
