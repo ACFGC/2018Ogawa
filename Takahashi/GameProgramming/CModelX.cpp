@@ -13,6 +13,7 @@ void CModelX ::Load(char *file) {
 	//
 	//ファイルサイズを取得する
 	//
+	/*
 	int fd = open(file, O_RDONLY);	//ファイルをオープンする
 	if (fd == -1) {	//エラーチェック
 		;//printf("open error\n");
@@ -35,6 +36,27 @@ void CModelX ::Load(char *file) {
 	fread(buf, size, 1, fp);	//確保した領域にファイルサイズ分データを読み込む
 	buf[size] = '\0';	//最後に\0を設定する（文字列の終端）
 	fclose(fp);	//ファイルをクローズする
+	*/
+
+	//
+	//ファイルサイズを取得する
+	//
+	FILE *fp;	//ファイルポインタ変数の作成
+	fp = fopen(file, "rb");	//ファイルをオープンする
+	if (fp == NULL) {	//エラーチェック
+		printf("fopen error\n");
+		return;
+	}
+	fseek(fp, 0L, SEEK_END);
+
+	int size = ftell(fp);
+	char *buf = mpPointer = new char[size + 1];	//ファイルサイズ+1バイト分の領域を確保
+
+	fseek(fp, 0L, SEEK_SET);
+	fread(buf, size, 1, fp);	//確保した領域にファイルサイズ分データを読み込む
+	buf[size] = '\0';	//最後に\0を設定する（文字列の終端）
+	fclose(fp);	//ファイルをクローズする
+
 
 	//;//printf("%s", buf);
 
@@ -630,6 +652,8 @@ CAnimation::CAnimation(CModelX *model)
 					float z = model->GetFloatToken();
 					CVector3 vec(x, y, z);
 					key[type][i].SetTranslate(vec);
+					//?
+					key[type][i] = key[type][i].Transpose();
 				}
 				break;
 			case 4: //行列データを取得
@@ -657,7 +681,8 @@ CAnimation::CAnimation(CModelX *model)
 			//時間設定
 			mpKey[i].mTime = time[2][i]; // Time
 			//行列作成 Position * Rotation * Size
-			mpKey[i].mMatrix = key[2][i] * key[0][i] * key[1][i];
+//?			mpKey[i].mMatrix = key[2][i] * key[0][i] * key[1][i];
+			mpKey[i].mMatrix = key[1][i] * key[0][i] * key[2][i];
 		}
 	}
 	//確保したエリア解放
@@ -745,7 +770,8 @@ Animate
 */
 void CModelXFrame::AnimateCombined(CMatrix44* parent) {
 	//親からの変換行列に、自分の変換行列を掛ける
-	mCombinedMatrix = (*parent) * mTransformMatrix;
+//?	mCombinedMatrix = (*parent) * mTransformMatrix;
+	mCombinedMatrix = mTransformMatrix * (*parent);
 	//子フレームの合成行列を作成する
 	for (int i = 0; i < mChild.size(); i++) {
 		mChild[i]->AnimateCombined(&mCombinedMatrix);
@@ -780,7 +806,8 @@ void CMesh::AnimateVertex(CModelX *model) {
 		//フレーム番号取得
 		int frameIndex = mSkinWeights[i]->mFrameIndex;
 		//フレーム合成行列にオフセット行列を合成
-		CMatrix44 mSkinningMatrix = model->mFrame[frameIndex]->mCombinedMatrix * mSkinWeights[i]->mOffset;
+//?		CMatrix44 mSkinningMatrix = model->mFrame[frameIndex]->mCombinedMatrix * mSkinWeights[i]->mOffset;
+		CMatrix44 mSkinningMatrix = mSkinWeights[i]->mOffset * model->mFrame[frameIndex]->mCombinedMatrix;
 		//頂点数分繰り返し
 		for (int j = 0; j < mSkinWeights[i]->mIndexNum; j++) {
 			//頂点番号取得

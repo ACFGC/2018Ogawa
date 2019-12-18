@@ -42,7 +42,7 @@ public:
 	const CMatrix44 operator * (float f) const;
 	void operator += (const CMatrix44 &r);
 	const CMatrix44 operator + (const CMatrix44 &r) const;
-
+	CMatrix44 Transpose() const ;
 };
 
 #endif

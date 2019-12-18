@@ -87,10 +87,15 @@ void CXCharacter::Update() {
 	CMatrix44 pos, rot;
 	//位置の行列を取得
 	pos.SetTranslate(mPosition);
+	//?
+	pos = pos.Transpose();
 	//回転（Y軸）の行列を取得
 	rot.SetRotationY(mRotation.y);
+	//?
+	rot = rot.Transpose();
 	//位置回転行列計算
-	mMatrix = pos * rot;
+//?	mMatrix = pos * rot;
+	mMatrix = rot * pos;
 	//アニメーションを更新する
 	Update(mMatrix);
 }

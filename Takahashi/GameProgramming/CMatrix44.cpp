@@ -121,3 +121,13 @@ const CMatrix44 CMatrix44::operator + (const CMatrix44 &r) const {
 	}
 	return tmp;
 }
+
+CMatrix44 CMatrix44::Transpose() const {
+	CMatrix44 tmp;
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			tmp.m[i][j] = m[j][i];
+		}
+	}
+	return tmp;
+}

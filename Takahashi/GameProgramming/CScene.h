@@ -3,11 +3,17 @@
 
 #include "CText.h"
 
+#include "CXCharacter.h"
+
 /*
 シーンの基本クラス
 */
 class CScene {
 public:
+	//?
+	CXCharacter mXPlayer;
+	CModelX mModelX;
+
 	static CScene *spInstance;
 	//シーンの識別値
 	enum ESceneTag {
