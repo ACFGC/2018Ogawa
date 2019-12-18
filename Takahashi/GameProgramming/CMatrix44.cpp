@@ -86,3 +86,38 @@ const CMatrix44 CMatrix44::operator*(const CMatrix44 &a) const {
 	return r;
 }
 
+void CMatrix44::SetQuaternion(float x, float y, float z, float w) {
+	m00 = 1 - 2 * y*y - 2 * z*z;	m01 = 2 * x*y + 2 * w*z;		m02 = 2 * x*z - 2 * w*y;		m03 = 0;
+	m10 = 2 * x*y - 2 * w*z;		m11 = 1 - 2 * x*x - 2 * z*z;	m12 = 2 * y*z + 2 * w*x;		m13 = 0;
+	m20 = 2 * x*z + 2 * w*y;		m21 = 2 * y*z - 2 * w*x;		m22 = 1 - 2 * x*x - 2 * y*y;	m23 = 0;
+	m30 = 0;						m31 = 0;						m32 = 0;						m33 = 1;
+}
+
+//s—ñ“¯m‚ÌŠ|‚¯Z
+const CMatrix44 CMatrix44::operator * (float f) const {
+	CMatrix44 tmp;
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			tmp.m[i][j] = m[i][j] * f;
+		}
+	}
+	return tmp;
+}
+
+void CMatrix44::operator += (const CMatrix44 &r) {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			m[i][j] += r.m[i][j];
+		}
+	}
+}
+
+const CMatrix44 CMatrix44::operator + (const CMatrix44 &r) const {
+	CMatrix44 tmp;
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			tmp.m[i][j] = r.m[i][j] + m[i][j];
+		}
+	}
+	return tmp;
+}

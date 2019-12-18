@@ -6,7 +6,19 @@
 class CMatrix44 {
 public:
 	//4x4の2次元配列
-	float m[4][4];
+//?	float m[4][4];
+	union //共用体　共通の領域を参照する
+	{
+		float	f[16];
+		float	m[4][4];
+		struct
+		{
+			float	m00, m10, m20, m30,
+			m01, m11, m21, m31,
+			m02, m12, m22, m32,
+			m03, m13, m23, m33;
+		};
+	};
 	//コンストラクタ
 	CMatrix44() {
 		Identity();
@@ -25,6 +37,12 @@ public:
 	void SetTranslate(const CVector3 &v);
 	//*CMatrix44のオーバーロード
 	const CMatrix44 operator*(const CMatrix44 &m) const;
+	//?
+	void SetQuaternion(float x, float y, float z, float w);
+	const CMatrix44 operator * (float f) const;
+	void operator += (const CMatrix44 &r);
+	const CMatrix44 operator + (const CMatrix44 &r) const;
+
 };
 
 #endif

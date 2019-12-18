@@ -20,10 +20,14 @@ public:
 	GLuint mId;
 	//TGAファイルのヘッダ情報
 	STgaheader header;
+	//ファイル名
+	char* mpName;
 	/*
 	デフォルトコンストラクタ
 	*/
-	CTexture() : mId(0) {}
+	CTexture() : mId(0)
+		, mpName(0)
+	{}
 	/*
 	デストラクタ（このインスタンスが破棄されるときに実行される）
 	*/
@@ -34,7 +38,17 @@ public:
 			glDeleteTextures(1, &mId);
 			mId = 0;
 		}
+		if (mpName) {
+			delete[] mpName;
+			mpName = 0;
+		}
 	}
+	CTexture(char *file)
+		: mId(0)
+		, mpName(0) {
+		Load(file);
+	}
+
 
 	/*
 	画像ファイルの読み込み（テクスチャファイルの読み込み）
