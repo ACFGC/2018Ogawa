@@ -11,6 +11,13 @@
 #include "CHammer.h"
 #include "CInput.h"
 #include <stdio.h>
+//SkinMesh 
+#include "CXCharacter.h" 
+//SkinMesh 
+CModelX ModelX; 
+//SkinMesh 
+CXCharacter PlayerX;
+
 
 
 //初めに1回だけ実行する処理の定義
@@ -59,10 +66,19 @@ void CScene::Init() {
 	/*	new CBreak(2.0f, 15.0f, -10.0f, 1.0f, 1.0f, 1.0f);
 	new CBreak(4.0f, 10.0f, -10.0f, 1.0f, 1.0f, 1.0f);
 	*/
+
+	//SkinMesh 
+	ModelX.Load(MODEL_FILE); 
+	//キャラクターにモデルを設定 
+	PlayerX.Init(&ModelX);
+
 }
 
 //繰り返し実行する処理の定義
 void CScene::Update() {
+	//SkinMesh 
+	PlayerX.Update();
+
 
 	//タスクを更新していく
 	CTaskManager::Get()->Update();
@@ -92,6 +108,9 @@ void CScene::Update() {
 
 	//タスクを描画していく
 	CTaskManager::Get()->Render();
+
+	//SkinMesh 
+	PlayerX.Render();
 
 
 	//2D座標でUIを描画

@@ -1,68 +1,60 @@
-#ifndef CVECTOR3_H
-#define CVECTOR3_H
+#pragma once
 
-#define _USE_MATH_DEFINES	//数学ライブラリのM_PIを有効にする
-#include <math.h>	//数学ライブラリのインクルード
+class CMatrix44;
 
-/*
- 3Dベクトルクラス
-*/
+class CVector2 {
+public:
+	float x, y;
+	CVector2() : x(0), y(0) {}
+};
+
 class CVector3 {
 public:
-	//3D座標
-	float x;
-	float y;
-	float z;
-	//デフォルトコンストラクタ
-	CVector3()
-		: x(0.0f)
-		, y(0.0f)
-		, z(0.0f)
-	{}
-	//引数付きコンストラクタ
-	CVector3(float ix, float iy, float iz)
-		: x(ix), y(iy), z(iz)
-	{}
-
-	//*floatのオーバーロード
-	const CVector3 operator*(float f) const {
-		return CVector3(x*f, y*f, z*f);
-	}
-	//+CVector3のオーバーロード
-	const CVector3 operator+(const CVector3 &v) const {
-		return CVector3(x + v.x, y + v.y, z + v.z);
-	}
-	//-CVector3のオーバーロード
-	const CVector3 operator-(const CVector3 &v) const {
-		return CVector3(x - v.x, y - v.y, z - v.z);
-	}
-	/*
-	 長さを求める
+	float x, y, z;
+	CVector3();
+	CVector3(float x, float y, float z);
+	//CMatrix44との掛け算
+	const CVector3 operator * (const CMatrix44 &m) const;
+	/* CVector3同士の演算
 	*/
-	float CVector3::Length() {
-		return sqrtf(x*x + y*y + z*z);
-	}
-	/*
-	 ベクトル値からx軸y軸の回転角度を求める
-	 atan2(y, x) -180°～180°
+	const CVector3 operator + (const CVector3 &v) const;
+	void operator += (const CVector3 &v);
+	const CVector3 operator - (const CVector3 &v) const;
+	void operator -= (const CVector3 &v);
+	const CVector3 operator * (const CVector3 &v) const;
+	void operator *= (const CVector3 &v);
+	const CVector3 operator / (const CVector3 &v) const;
+	void operator /= (const CVector3 &v);
+	const CVector3 operator * (float f) const;
+	void operator *= (float f);
+	const CVector3 operator / (float f) const;
+	void operator /= (float f);
+	/*内積を求める
+	ただし、x,y,zのみ
 	*/
-	CVector3 CVector3::GetRotation() {
-		CVector3 rot;
-		//Y軸の回転角度
-		rot.y = -(atan2f(z, x)) * 180.0f / M_PI;
-		//X軸の回転角度
-//		rot.x = -(atan2f(y, Length())) * 180.0f / M_PI;
-		rot.x = -(atan2f(y, sqrtf(x*x+z*z))) * 180.0f / M_PI;
-		return rot;
-	}
-	/*
-	 内積を求める
+	float dot(const CVector3 &v) const;
+	/* ベクトルの大きさを返す
+	ただし、x,y,zのみ
 	*/
-	float CVector3::Dot(const CVector3 &v) {
-		return x * v.x + y * v.y + z * v.z;
+	float length() const;
+	/* 正規化したベクトルを返す
+	ベクトルの正規化：大きさを1にする
+	*/
+	CVector3 normalize() const;
+	/* 指定されたベクトルの方向へ向ける為の回転角度を得る
+	return:｜X軸の回転角度　Y軸の回転角度　０度｜
+	*/
+	CVector3 getRotationTowards(const CVector3 &dir);
+	/* 指定された半径の球上の位置をランダムに設定する
+	ベクトル｜0.0 0.0 1.0｜をX軸でランダムに回転させ、次に
+	Y軸でランダムに回転させ、半径を掛けた値を設定する
+	*/
+	void setRandomPositionSphere(float radius);
+	CVector3 Cross(const CVector3 &v) const {
+		return CVector3(
+			y*v.z - z*v.y,
+			z*v.x - x*v.z,
+			x*v.y - y*v.x).normalize();
 	}
 
 };
-
-
-#endif
