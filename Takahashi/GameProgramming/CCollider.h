@@ -40,6 +40,8 @@ public:
 	void Destroy();
 	//項目リストから削除処理
 	void Remove(C3DCollider*);
+	//?
+	void Render();
 };
 
 
@@ -83,6 +85,9 @@ public:
 	virtual bool Collision(CSphereCollider *p, int*px, int*py, int*pz) { return false; };
 	static bool Collision(C3DCollider*, C3DCollider*);
 	virtual bool Collision(CSphereCollider *p) { return false; };
+	//?
+	//
+	virtual void Render(){};
 };
 /*
  球コライダクラス
@@ -99,6 +104,10 @@ public:
 	//衝突判定処理
 //	bool Collision(CSphereCollider *p, int*px, int*py, int*pz);
 	bool CSphereCollider::Collision(CSphereCollider *p2);
+	//?
+	//
+	void Render();
+
 };
 /*
  直方体コライダクラス
@@ -115,6 +124,10 @@ public:
 	//直方体と球の衝突判定
 //	bool Collision(CSphereCollider *p, int*px, int*py, int*pz);
 	bool C3DBoxCollider::Collision(CSphereCollider *p);
+	//?
+	//
+	void Render();
+
 };
 
 

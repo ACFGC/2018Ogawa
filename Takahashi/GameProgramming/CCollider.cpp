@@ -1,5 +1,8 @@
 #include "CCollider.h"
 #include "CTask.h"
+//?
+#include "glut.h"
+#include "C3DBox.h"
 
 //インスタンスのstatic変数
 CCollisionManager* CCollisionManager::mpInstance = 0;
@@ -99,11 +102,14 @@ bool C3DBoxCollider::Collision(CSphereCollider *p) {
 	//直方体の中心座標を求める
 	CVector3 center = *mpMatrix * mPosition;
 	//直方体のX軸方向を求める
-	CVector3 vx = *mpMatrix * (CVector3(1.0f, 0.0f, 0.0f) + mPosition) - center;
+//	CVector3 vx = *mpMatrix * (CVector3(1.0f, 0.0f, 0.0f) + mPosition) - center;
+	CVector3 vx = *mpMatrix * CVector3(1.0f, 0.0f, 0.0f) - *mpMatrix * CVector3(0.0f, 0.0f, 0.0f);
 	//直方体のY軸方向を求める
-	CVector3 vy = *mpMatrix * (CVector3(0.0f, 1.0f, 0.0f) + mPosition) - center;
+//	CVector3 vy = *mpMatrix * (CVector3(0.0f, 1.0f, 0.0f) + mPosition) - center;
+	CVector3 vy = *mpMatrix * CVector3(0.0f, 1.0f, 0.0f) - *mpMatrix * CVector3(0.0f, 0.0f, 0.0f);
 	//直方体のZ軸方向を求める
-	CVector3 vz = *mpMatrix * (CVector3(0.0f, 0.0f, 1.0f) + mPosition) - center;
+//	CVector3 vz = *mpMatrix * (CVector3(0.0f, 0.0f, 1.0f) + mPosition) - center;
+	CVector3 vz = *mpMatrix * CVector3(0.0f, 0.0f, 1.0f) - *mpMatrix * CVector3(0.0f, 0.0f, 0.0f);
 	//直方体から球へのベクトルを求める
 	CVector3 vBS = *p->mpMatrix*p->mPosition - center;
 	//直方体から球へ、直方体のX軸に対する長さとの差を求める
@@ -178,6 +184,17 @@ void CCollisionManager::Update() {
 	}
 }
 
+void CCollisionManager::Render() {
+	C3DCollider *col1 = mpHead;
+	while (col1 != 0) {
+		col1->Render();
+		//次のコライダへ
+		col1 = col1->mpNext;
+	}
+}
+
+
+
 bool C3DCollider::Collision(C3DCollider* i, C3DCollider*y) {
 	switch (i->mTag) {
 	case E3DBOX:
@@ -199,6 +216,45 @@ bool C3DCollider::Collision(C3DCollider* i, C3DCollider*y) {
 		break;
 	}
 	return false;
+}
+
+void C3DBoxCollider::Render() {
+	return;
+	glPushMatrix();
+	glMultMatrixf(mpMatrix->Transpose().m[0]);
+	glTranslatef(mPosition.x, mPosition.y, mPosition.z);
+	glDisable(GL_LIGHTING);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glColor4f(1.0f, 0.0f, 0.0f, 0.5f);
+
+	C3DBox box;
+	box.SetWHD(mSize.x, mSize.y, mSize.z);
+	box.Render();
+
+	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+	glDisable(GL_BLEND);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
+}
+
+void CSphereCollider::Render() {
+	glPushMatrix();
+	glMultMatrixf(mpMatrix->Transpose().m[0]);
+	glTranslatef(mPosition.x, mPosition.y, mPosition.z);
+	glDisable(GL_LIGHTING);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glColor4f(1.0f, 0.0f, 0.0f, 0.5f);
+
+	glutWireSphere(mRadius, 16, 16);
+
+	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+	glDisable(GL_BLEND);
+	glEnable(GL_LIGHTING);
+	glPopMatrix();
+
 }
 
 

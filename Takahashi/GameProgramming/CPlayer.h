@@ -33,6 +33,9 @@ public:
 		//親のクラスを初期化
 		: CCharacter(x, y, z, w, h, d, rx, ry, rz)
 	{
+		//?
+		//
+		mTaskTag = EPLAYER;
 		//球コライダの設定
 		//このタスクを設定
 		mColSphere.mpTask = this;
@@ -40,6 +43,8 @@ public:
 		mColSphere.mpMatrix = &mBox.mMatrix;
 		//球の半径の長さ設定
 		mColSphere.mRadius = w;
+		//?
+		mColSphere.mPosition = CVector3(0.0f, 1.0f, 0.0f);
 
 		spInstance = this;
 	}

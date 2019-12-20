@@ -100,6 +100,7 @@ void CScene::Update() {
 
 	//ƒ^ƒXƒN‚ğ•`‰æ‚µ‚Ä‚¢‚­
 	CTaskManager::Get()->Render();
+	CCollisionManager::Get()->Render();
 	//?
 //	mXPlayer.Render();
 
