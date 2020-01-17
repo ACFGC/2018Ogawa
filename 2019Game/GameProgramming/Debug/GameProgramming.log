@@ -1,17 +1,76 @@
-﻿2019/12/02 9:35:37 にビルドを開始しました。
-     1>ノード 2 上のプロジェクト "C:\Users\Ogawa\Desktop\せーさく\せーさくこうき\GameProgramming\GameProgramming.vcxproj" (Build ターゲット)。
+﻿2020/01/17 11:34:27 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\Ogawa\Desktop\新しいフォルダー\2018OgawaRep\2019Game\GameProgramming\GameProgramming.vcxproj" (Build ターゲット)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CScene.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt C3DBox.cpp CBall.cpp CCollider.cpp CGoal.cpp CHammer.cpp CHappy.cpp CInput.cpp CKey.cpp CMain.cpp CMatirx33.cpp CMatrix44.cpp CMove.cpp CPass.cpp CPlayer.cpp CRectangle.cpp CScene.cpp CTask.cpp CText.cpp CTexture.cpp CTrampoline.cpp CVector2.cpp CWind.cpp main.cpp
+         main.cpp
+         CWind.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(52): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(55): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         CVector2.cpp
+         CTrampoline.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(52): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(55): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         CTexture.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\ctexture.cpp(10): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : 'fopen' の宣言を確認してください。
+         CText.cpp
+         CTask.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(52): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(55): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
          CScene.cpp
-     1>c:\users\ogawa\desktop\せーさく\せーさくこうき\gameprogramming\cscene.cpp(124): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cscene.cpp(124): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 'sprintf' の宣言を確認してください。
-     1>c:\users\ogawa\desktop\せーさく\せーさくこうき\gameprogramming\cscene.cpp(129): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cscene.cpp(129): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 'sprintf' の宣言を確認してください。
+         CRectangle.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(52): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(55): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         CPlayer.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(52): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(55): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         CPass.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(52): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(55): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         CMove.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(52): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(55): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         CMatrix44.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(52): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(55): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cmatrix44.cpp(32): warning C4244: '初期化中' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cmatrix44.cpp(48): warning C4244: '初期化中' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         CMatirx33.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cmatirx33.cpp(36): warning C4244: '初期化中' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         CMain.cpp
+         CKey.cpp
+         CInput.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cinput.cpp(20): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cinput.cpp(21): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         CHappy.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(52): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(55): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         CHammer.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(52): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(55): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         CGoal.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(52): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(55): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         コードを生成中...
+         コンパイル中...
+         CCollider.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(52): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(55): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         CBall.cpp
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(52): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\2019game\gameprogramming\cvector3.h(55): warning C4244: '=' : 'double' から 'float' への変換です。データが失われる可能性があります。
+         C3DBox.cpp
+         コードを生成中...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ogawa\Desktop\せーさく\せーさくこうき\Debug\GameProgramming.exe" /INCREMENTAL /NOLOGO glew32.lib glfw3.lib glfw3dll.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ogawa\Desktop\せーさく\せーさくこうき\Debug\GameProgramming.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ogawa\Desktop\せーさく\せーさくこうき\Debug\GameProgramming.lib" /MACHINE:X86 Debug\C3DBox.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ogawa\Desktop\新しいフォルダー\2018OgawaRep\2019Game\Debug\GameProgramming.exe" /INCREMENTAL /NOLOGO glew32.lib glfw3.lib glfw3dll.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ogawa\Desktop\新しいフォルダー\2018OgawaRep\2019Game\Debug\GameProgramming.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ogawa\Desktop\新しいフォルダー\2018OgawaRep\2019Game\Debug\GameProgramming.lib" /MACHINE:X86 Debug\C3DBox.obj
          Debug\CBall.obj
          Debug\CCollider.obj
          Debug\CGoal.obj
+         Debug\CHammer.obj
          Debug\CHappy.obj
          Debug\CInput.obj
          Debug\CKey.obj
@@ -30,9 +89,11 @@
          Debug\CVector2.obj
          Debug\CWind.obj
          Debug\main.obj
-         GameProgramming.vcxproj -> C:\Users\Ogawa\Desktop\せーさく\せーさくこうき\Debug\GameProgramming.exe
-     1>プロジェクト "C:\Users\Ogawa\Desktop\せーさく\せーさくこうき\GameProgramming\GameProgramming.vcxproj" (Build ターゲット) のビルドが完了しました。
+         LINK : 前回のインクリメンタル リンクで C:\Users\Ogawa\Desktop\新しいフォルダー\2018OgawaRep\2019Game\Debug\GameProgramming.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' は他のライブラリの使用と競合しています。/NODEFAULTLIB:library を使用してください。
+         GameProgramming.vcxproj -> C:\Users\Ogawa\Desktop\新しいフォルダー\2018OgawaRep\2019Game\Debug\GameProgramming.exe
+     1>プロジェクト "C:\Users\Ogawa\Desktop\新しいフォルダー\2018OgawaRep\2019Game\GameProgramming\GameProgramming.vcxproj" (Build ターゲット) のビルドが完了しました。
 
 ビルドに成功しました。
 
-経過時間 00:00:00.85
+経過時間 00:00:07.76

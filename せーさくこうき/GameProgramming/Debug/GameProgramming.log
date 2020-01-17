@@ -1,4 +1,4 @@
-﻿2019/12/12 11:54:36 にビルドを開始しました。
+﻿2019/12/20 15:29:34 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\Users\Ogawa\Desktop\新しいフォルダー\2018OgawaRep\せーさくこうき\GameProgramming\GameProgramming.vcxproj" (Build ターゲット)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt C3DBox.cpp CCollider.cpp CGoal.cpp CHammer.cpp CHappy.cpp CMove.cpp CPass.cpp CPlayer.cpp CRectangle.cpp CScene.cpp CTrampoline.cpp CWind.cpp
@@ -37,31 +37,7 @@
                  c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(84): または 'const CMatrix44 CMatrix44::operator *(const CMatrix44 &) const'
                  引数リスト '(CMatrix44, CVector3)' を一致させようとしているとき
          CScene.cpp
-     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\c3dtriangle.h(17): error C2679: 二項演算子 '*' : 型 'CVector3' の右オペランドを扱う演算子が見つかりません (または変換できません)。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(89): 'const CMatrix44 CMatrix44::operator *(float) const' の可能性があります。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(84): または 'const CMatrix44 CMatrix44::operator *(const CMatrix44 &) const'
-                 引数リスト '(CMatrix44, CVector3)' を一致させようとしているとき
-     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\c3dtriangle.h(18): error C2679: 二項演算子 '*' : 型 'CVector3' の右オペランドを扱う演算子が見つかりません (または変換できません)。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(89): 'const CMatrix44 CMatrix44::operator *(float) const' の可能性があります。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(84): または 'const CMatrix44 CMatrix44::operator *(const CMatrix44 &) const'
-                 引数リスト '(CMatrix44, CVector3)' を一致させようとしているとき
-     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\c3dtriangle.h(19): error C2679: 二項演算子 '*' : 型 'CVector3' の右オペランドを扱う演算子が見つかりません (または変換できません)。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(89): 'const CMatrix44 CMatrix44::operator *(float) const' の可能性があります。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(84): または 'const CMatrix44 CMatrix44::operator *(const CMatrix44 &) const'
-                 引数リスト '(CMatrix44, CVector3)' を一致させようとしているとき
-     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\c3dtriangle.h(23): error C2679: 二項演算子 '*' : 型 'CVector3' の右オペランドを扱う演算子が見つかりません (または変換できません)。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(89): 'const CMatrix44 CMatrix44::operator *(float) const' の可能性があります。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(84): または 'const CMatrix44 CMatrix44::operator *(const CMatrix44 &) const'
-                 引数リスト '(CMatrix44, CVector3)' を一致させようとしているとき
-     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmodelx.h(66): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
-     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmodelx.h(165): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
-     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmodelx.h(224): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
-     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmodelx.h(228): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
-     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmodelx.h(232): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
-     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cscene.cpp(101): error C2679: 二項演算子 '*' : 型 'CVector3' の右オペランドを扱う演算子が見つかりません (または変換できません)。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(89): 'const CMatrix44 CMatrix44::operator *(float) const' の可能性があります。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(84): または 'const CMatrix44 CMatrix44::operator *(const CMatrix44 &) const'
-                 引数リスト '(CMatrix44, CVector3)' を一致させようとしているとき
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cscene.cpp : fatal error C1041: プログラム データベース 'c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\debug\vc120.idb' を開けません。複数の CL.EXE が同じ .PDB ファイルに書き込む場合、/FS を使用してください。
          CRectangle.cpp
      1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cvector3.h(5): error C2011: 'CVector2' : 'class' 型の再定義
                  c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cvector2.h(6) : 'CVector2' の宣言を確認してください。
@@ -256,22 +232,7 @@
                  c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(84): または 'const CMatrix44 CMatrix44::operator *(const CMatrix44 &) const'
                  引数リスト '(CMatrix44, CVector3)' を一致させようとしているとき
          CHappy.cpp
-     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\c3dtriangle.h(17): error C2679: 二項演算子 '*' : 型 'CVector3' の右オペランドを扱う演算子が見つかりません (または変換できません)。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(89): 'const CMatrix44 CMatrix44::operator *(float) const' の可能性があります。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(84): または 'const CMatrix44 CMatrix44::operator *(const CMatrix44 &) const'
-                 引数リスト '(CMatrix44, CVector3)' を一致させようとしているとき
-     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\c3dtriangle.h(18): error C2679: 二項演算子 '*' : 型 'CVector3' の右オペランドを扱う演算子が見つかりません (または変換できません)。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(89): 'const CMatrix44 CMatrix44::operator *(float) const' の可能性があります。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(84): または 'const CMatrix44 CMatrix44::operator *(const CMatrix44 &) const'
-                 引数リスト '(CMatrix44, CVector3)' を一致させようとしているとき
-     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\c3dtriangle.h(19): error C2679: 二項演算子 '*' : 型 'CVector3' の右オペランドを扱う演算子が見つかりません (または変換できません)。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(89): 'const CMatrix44 CMatrix44::operator *(float) const' の可能性があります。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(84): または 'const CMatrix44 CMatrix44::operator *(const CMatrix44 &) const'
-                 引数リスト '(CMatrix44, CVector3)' を一致させようとしているとき
-     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\c3dtriangle.h(23): error C2679: 二項演算子 '*' : 型 'CVector3' の右オペランドを扱う演算子が見つかりません (または変換できません)。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(89): 'const CMatrix44 CMatrix44::operator *(float) const' の可能性があります。
-                 c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(84): または 'const CMatrix44 CMatrix44::operator *(const CMatrix44 &) const'
-                 引数リスト '(CMatrix44, CVector3)' を一致させようとしているとき
+     1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\chappy.cpp : fatal error C1041: プログラム データベース 'c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\debug\vc120.pdb' を開けません。複数の CL.EXE が同じ .PDB ファイルに書き込む場合、/FS を使用してください。
          CHammer.cpp
      1>c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\c3dtriangle.h(17): error C2679: 二項演算子 '*' : 型 'CVector3' の右オペランドを扱う演算子が見つかりません (または変換できません)。
                  c:\users\ogawa\desktop\新しいフォルダー\2018ogawarep\せーさくこうき\gameprogramming\cmatrix44.h(89): 'const CMatrix44 CMatrix44::operator *(float) const' の可能性があります。
@@ -388,4 +349,4 @@
 
 ビルドに失敗しました。
 
-経過時間 00:00:02.27
+経過時間 00:00:03.91
