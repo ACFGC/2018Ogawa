@@ -3,7 +3,8 @@
 
 #define _USE_MATH_DEFINES	//数学ライブラリのM_PIを有効にする
 #include <math.h>	//数学ライブラリのインクルード
-
+//?
+class CMatrix44;
 /*
  3Dベクトルクラス
 */
@@ -60,6 +61,21 @@ public:
 	*/
 	float CVector3::Dot(const CVector3 &v) {
 		return x * v.x + y * v.y + z * v.z;
+	}
+	/* 正規化したベクトルを返す
+	ベクトルの正規化：大きさを1にする
+	*/
+	CVector3 CVector3::normalize() {
+		float len = Length();
+		return CVector3(x / len, y / len, z / len);
+	}
+	//CMatrix44との掛け算
+	const CVector3 operator * (const CMatrix44 &m) const;
+
+	void CVector3::operator += (const CVector3 &v) {
+		x += v.x;
+		y += v.y;
+		z += v.z;
 	}
 
 };

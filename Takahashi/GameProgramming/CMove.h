@@ -1,30 +1,24 @@
-#ifndef CPLAYER_H
-#define CPLAYER_H
+#ifndef CMOVE_H
+#define CMOVE_H
 
 #include "CCharacter.h"
-#include "CBall.h"
 /*
 プレイヤークラス
 */
-class CPlayer : public CCharacter {
+class CMove : public CCharacter {
 public:
 	//球コライダ追加
 	CSphereCollider mColSphere;
 	//移動速度
 	CVector3 mVelocity;
 
-	int Jump = 0; //ジャンプ回数
-	int Goal = 1; //ゴール条件 1クリア　2失敗
-	int Happy = 0; //ハッピー状態
-	int Time = 0 * 60; //タイム
-
-	int x = 0;
-	int z = 0;//速度
+	int change = 0; //移動方向
+	int Move = 60;  //移動時間
 
 
-	static CPlayer *spInstance; //インスタンスのポインタ
+	static CMove *spInstance; //インスタンスのポインタ
 
-	CPlayer(float x, float y, float z, float w, float h, float d, float rx, float ry, float rz)
+	CMove(float x, float y, float z, float w, float h, float d, float rx, float ry, float rz)
 		//親のクラスを初期化
 		: CCharacter(x, y, z, w, h, d, rx, ry, rz)
 	{

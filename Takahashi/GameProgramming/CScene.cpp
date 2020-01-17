@@ -8,12 +8,18 @@
 #include "CWind.h"
 #include "CTramPoline.h"
 #include "CMove.h"
+#include "CHammer.h"
 #include "CInput.h"
 #include <stdio.h>
 
 
 //初めに1回だけ実行する処理の定義
 void CScene::Init() {
+	//?
+	mModelX.Load("ラグナ.x");
+//	mXPlayer.Init(&mModelX);
+//	mXPlayer.mPosition = CVector3(00.0f, 20.0f, 40.0f);
+
 	//床生成
 	new CCharacter(0.0f, 0.0f, 50.0f, 20.0f, 1.0f, 20.0f, 0.0f, 0.0f, 0.0f);
 	//床生成
@@ -24,9 +30,12 @@ void CScene::Init() {
 	new CCharacter(-10.0f, 0.0f, -180.0f, 5.0f, 1.0f, 20.0f, 0.0f, 0.0f, 0.0f);
 	//床生成
 	new CCharacter(-10.0f, 0.0f, -240.0f, 5.0f, 1.0f, 20.0f, 0.0f, 0.0f, 0.0f);
+	//床生成
+	new CCharacter(-10.0f, 0.0f, -320.0f, 5.0f, 1.0f, 20.0f, 0.0f, 0.0f, 0.0f);
 
 	//プレイヤー生成
-	new CPlayer(0.0f, 50.0f, 50.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f);
+	CPlayer *player = new CPlayer(0.0f, 50.0f, 50.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f);
+	player->mXCharacter.Init(&mModelX);
 
 	 //ゴール生成
 	//new CGoal(0.0f, 30.0f, -160.0f, 20.0f, 30.0f, 20.0f, 0.0f, 0.0f, 0.0f);
@@ -48,16 +57,20 @@ void CScene::Init() {
 	//動く床
 	new CMove(-30.0f, 10.0f, -210.0f, 10.0f, 10.0f, 1.0f, 0.0f, 0.0f, 0.0f);
 
-	/*
+	//回転床
+	new CHammer(0.0f, 10.0f, 30.0f, 10.0f, 10.0f, 1.0f, 0.0f, 90.0f, 0.0f);
+
 	//消えるブロック生成
-	new CBreak(0.0f, 10.0f, -10.0f, 1.0f, 1.0f, 1.0f);
-	new CBreak(2.0f, 15.0f, -10.0f, 1.0f, 1.0f, 1.0f);
+	new CBreak(-10.0f, 0.0f, -280.0f, 5.0f, 1.0f, 20.0f, 0.0f, 0.0f, 0.0f);
+	/*	new CBreak(2.0f, 15.0f, -10.0f, 1.0f, 1.0f, 1.0f);
 	new CBreak(4.0f, 10.0f, -10.0f, 1.0f, 1.0f, 1.0f);
 	*/
 }
 
 //繰り返し実行する処理の定義
 void CScene::Update() {
+	//?
+//	mXPlayer.Update();
 
 	//タスクを更新していく
 	CTaskManager::Get()->Update();
@@ -87,7 +100,9 @@ void CScene::Update() {
 
 	//タスクを描画していく
 	CTaskManager::Get()->Render();
-
+	CCollisionManager::Get()->Render();
+	//?
+//	mXPlayer.Render();
 
 	//2D座標でUIを描画
 	//行列をプロジェクションモードへ変更

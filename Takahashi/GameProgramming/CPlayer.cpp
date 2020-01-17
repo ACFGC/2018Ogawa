@@ -12,7 +12,7 @@ void CPlayer::Update() {
 	if (Happy == 0 && Goal > 0){
 		if (CKey::Once(' ')) {
 			if (Jump <= 1){
-				mVelocity.y = 01.5;
+				mVelocity.y = 0.5;
 				//ジャンプ使用不可
 				Jump += 1;
 			}
@@ -145,6 +145,13 @@ void CPlayer::Update() {
 
 	//更新
 	CCharacter::Update();
+	//?
+	//
+	mXCharacter.mPosition = mPosition;
+	mXCharacter.mRotation = mBox.mRotation;
+	mXCharacter.mRotation.y += 180;
+	mXCharacter.Update();
+
 }
 /*
 衝突処理
@@ -152,17 +159,25 @@ i:自分のコライダ
 y:相手のコライダ
 */
 void CPlayer::OnCollision(C3DCollider *i, C3DCollider *y) {
+	int dx, dy, dz;
 	//衝突判定処理を呼ぶ
-	if (C3DCollider::Collision(i, y)) {
-		//衝突している時
-		switch (i->mTag) {
-			//自分のコライダが球
-		case C3DCollider::ESPHERE:
-			switch (y->mTag) {
-				//相手のコライダがボックス
-			case C3DCollider::E3DBOX:
-				switch (y->mTag){
+	//if (C3DCollider::Collision(i, y, &dx, &dy, &dz)) {
+	//if (i->Collision((CSphereCollider*)y, &dx, &dy, &dz)) {
+	//	if (i->Collision((CSphereCollider*)y)) {
+	//衝突している時
+	switch (i->mTag) {
+		//自分のコライダが球
+	case C3DCollider::ESPHERE:
+		switch (y->mTag) {
+			//相手のコライダがボックス
+		case C3DCollider::E3DBOX:
+			if (y->Collision((CSphereCollider*)i)) {
+				//?				switch (y->mTag){
+				switch (y->mpTask->mTaskTag){
 				case CTask::EWIND:
+					break;
+				case CTask::EPLAYER:
+					;
 					break;
 				default:
 					//下向きの速度を0にする
@@ -173,13 +188,19 @@ void CPlayer::OnCollision(C3DCollider *i, C3DCollider *y) {
 					Jump = 0;
 					break;
 				}
-			
-			default:
-				;
 			}
 			break;
 		default:
 			;
 		}
+		break;
+	default:
+		;
 	}
+	//	}
+}
+
+void CPlayer::Render() {
+//	CCharacter::Render();
+	mXCharacter.Render();
 }

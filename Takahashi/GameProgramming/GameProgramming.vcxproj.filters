@@ -69,9 +69,6 @@
     <ClCompile Include="CTrampoline.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="CBall.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="CRectangle.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -82,6 +79,15 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="CHammer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CXCharacter.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CModelX.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CVector3.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -149,9 +155,6 @@
     <ClInclude Include="CTramPoline.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="CBall.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="CRectangle.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
@@ -162,6 +165,12 @@
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="CHammer.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CXCharacter.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CModelX.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>

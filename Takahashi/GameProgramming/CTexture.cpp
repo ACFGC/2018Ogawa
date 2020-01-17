@@ -1,7 +1,13 @@
 #include <stdio.h>	//ファイルの入力に使用
 #include "CTexture.h"
+//?
+#include <string.h>
 
 void CTexture::Load(const char* filename) {
+	//?
+	mpName = new char[strlen(filename) + 1];
+	strcpy(mpName, filename);
+
 	//画像データ
 	unsigned char* data;
 	//ファイルポインタの作成

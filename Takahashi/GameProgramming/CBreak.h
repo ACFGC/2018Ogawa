@@ -15,6 +15,7 @@ public:
 	void OnCollision(C3DCollider *i, C3DCollider *y) {
 		//Õ“Ë”»’è‚ğŒÄ‚Ô
 		if (C3DCollider::Collision(i, y)) {
+			CPlayer::spInstance->mVelocity.y = 0.5;
 			//Õ“Ë‚µ‚Ä‚¢‚½‚ç–³Œø‚É‚·‚é
 			mEnabled = false;
 		}
