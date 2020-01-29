@@ -3,6 +3,7 @@
 
 #include "CCharacter.h"
 #include "CBall.h"
+#include "CXCharacter.h"
 /*
 プレイヤークラス
 */
@@ -38,9 +39,12 @@ public:
 
 		spInstance = this;
 	}
+	CXCharacter mXCharacter;
 
 	//更新処理
 	void Update();
+
+	void Render();
 	//衝突処理
 	void OnCollision(C3DCollider *i, C3DCollider *y);
 };

@@ -1,5 +1,6 @@
 #include <stdio.h>	//ファイルの入力に使用
 #include "CTexture.h"
+#include <string.h>
 
 void CTexture::Load(const char* filename) {
 	//画像データ
@@ -42,6 +43,11 @@ void CTexture::Load(const char* filename) {
 	glBindTexture(GL_TEXTURE_2D, 0);
 	//格納領域を解放
 	delete[] data;
+
+	mpName = new char[strlen(filename) + 1];
+	strcpy(mpName, filename);
+
+
 }
 
 void CTexture::DrawImage(int left, int right, int bottom, int top, float tleft, float tright, float tbottom, float ttop) {

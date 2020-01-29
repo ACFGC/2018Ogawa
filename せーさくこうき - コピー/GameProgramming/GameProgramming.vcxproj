@@ -90,6 +90,7 @@
     <ClCompile Include="CMain.cpp" />
     <ClCompile Include="CMatirx33.cpp" />
     <ClCompile Include="CMatrix44.cpp" />
+    <ClCompile Include="CModelX.cpp" />
     <ClCompile Include="CMove.cpp" />
     <ClCompile Include="CPass.cpp" />
     <ClCompile Include="CPlayer.cpp" />
@@ -100,7 +101,9 @@
     <ClCompile Include="CTexture.cpp" />
     <ClCompile Include="CTrampoline.cpp" />
     <ClCompile Include="CVector2.cpp" />
+    <ClCompile Include="CVector3.cpp" />
     <ClCompile Include="CWind.cpp" />
+    <ClCompile Include="CXCharacter.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +121,7 @@
     <ClInclude Include="CMatrix44.h" />
     <ClInclude Include="CMain.h" />
     <ClInclude Include="CMatrix33.h" />
+    <ClInclude Include="CModelX.h" />
     <ClInclude Include="CMove.h" />
     <ClInclude Include="CPass.h" />
     <ClInclude Include="CPlayer.h" />
@@ -130,6 +134,7 @@
     <ClInclude Include="CVector2.h" />
     <ClInclude Include="CVector3.h" />
     <ClInclude Include="CWind.h" />
+    <ClInclude Include="CXCharacter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

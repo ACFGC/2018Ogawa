@@ -145,6 +145,15 @@ void CPlayer::Update() {
 
 	//XV
 	CCharacter::Update();
+
+	mXCharacter.mPosition = mPosition;
+	mXCharacter.mRotation = mBox.mRotation;
+	mXCharacter.mRotation.y += 180;
+	mXCharacter.Update();
+}
+
+void CPlayer::Render() {
+	mXCharacter.Render();
 }
 /*
 Õ“Ëˆ—

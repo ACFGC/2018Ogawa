@@ -2,6 +2,7 @@
 #define CSCENE_H
 
 #include "CText.h"
+#include "CModelX.h"
 
 /*
 シーンの基本クラス
@@ -21,6 +22,8 @@ public:
 
 	
 	CText mText;
+
+	CModelX mModelX;
 
 	//仮想関数
 	//デストラクタを仮想関数にしないと
